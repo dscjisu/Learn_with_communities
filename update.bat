@@ -43,7 +43,18 @@ if %ERRORLEVEL% neq 0 (
 )
 
 echo.
-echo [3/3] Checking local dashboard server...
+echo [3/4] Committing and pushing updates to GitHub...
+git add data/
+git commit -m "Update daily report data" >nul 2>&1
+if %ERRORLEVEL% equ 0 (
+    echo   Pushing to GitHub (Vercel will auto-deploy)...
+    git push origin main
+) else (
+    echo   No changes detected or git commit skipped.
+)
+
+echo.
+echo [4/4] Checking local dashboard server...
 netstat -ano | findstr :8080 | findstr LISTENING >nul
 if %ERRORLEVEL% neq 0 (
     echo   Starting local server at http://localhost:8080...
