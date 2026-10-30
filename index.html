@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDGC-JISU1 — Progress Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@350;400;450;500;550;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+                    fontSize: {
+                        '2xs': '0.6875rem',
+                    },
+                    colors: {
+                        surface: { 0: '#ffffff', 1: '#f9fafb', 2: '#f3f4f6', 3: '#e5e7eb' },
+                        ink: { 0: '#111827', 1: '#374151', 2: '#6b7280', 3: '#9ca3af', 4: '#d1d5db' },
+                        accent: { DEFAULT: '#2563eb', light: '#eff6ff', hover: '#1d4ed8' },
+                        ok: '#059669',
+                        warn: '#d97706',
+                        danger: '#dc2626',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        *, *::before, *::after { -webkit-font-smoothing: antialiased; }
+        body { font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11'; }
+        .tabular { font-variant-numeric: tabular-nums; }
+        .mono { font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', ui-monospace, monospace; font-size: 0.8125rem; }
+
+        /* Minimal scrollbar */
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+        /* Table */
+        .tbl-row { transition: background 120ms ease; }
+        .tbl-row:hover { background: #f9fafb; }
+        .tbl-row td { border-bottom: 1px solid #f3f4f6; }
+
+        /* Chip */
+        .chip {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 2px 8px; border-radius: 4px;
+            font-size: 0.6875rem; font-weight: 500; line-height: 1.5;
+            letter-spacing: 0.01em;
+        }
+        .chip-ok   { background: #ecfdf5; color: #065f46; }
+        .chip-warn { background: #fffbeb; color: #92400e; }
+        .chip-danger { background: #fef2f2; color: #991b1b; }
+        .chip-neutral { background: #f3f4f6; color: #4b5563; }
+        .chip-blue { background: #eff6ff; color: #1e40af; }
+
+        /* Search */
+        .search-box:focus-within { box-shadow: 0 0 0 2px #2563eb33; border-color: #2563eb; }
+
+        /* Progress bar */
+        .pbar { height: 4px; border-radius: 2px; background: #e5e7eb; overflow: hidden; }
+        .pbar-fill { height: 100%; border-radius: 2px; transition: width 400ms ease; }
+
+        /* Fade in */
+        .fade-in { animation: fadeIn 200ms ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Dot indicator */
+        .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    </style>
+</head>
+<body class="bg-surface-1 text-ink-0 min-h-screen">
+
+    <!-- Top bar -->
+    <header class="bg-white border-b border-surface-3 sticky top-0 z-40">
+        <div class="max-w-[1320px] mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-md bg-accent flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                </div>
+                <span class="font-semibold text-sm">GDGC-JISU1</span>
+                <span class="text-ink-3 text-sm">/</span>
+                <span class="text-ink-2 text-sm">Learn with Communities 2026</span>
+            </div>
+            <div class="flex items-center gap-5 text-sm text-ink-2">
+                <span class="tabular">Report: <span id="report-date" class="text-ink-1 font-medium">—</span></span>
+                <div class="h-4 w-px bg-surface-3"></div>
+                <div class="flex items-center gap-1.5">
+                    <span id="days-left" class="tabular text-ink-0 font-semibold">—</span>
+                    <span>days to deadline</span>
+                </div>
+                <div class="text-2xs text-ink-3 tabular">Nov 23, 2026</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1320px] mx-auto px-6 py-6">
+
+        <!-- Metrics row -->
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-px bg-surface-3 rounded-lg overflow-hidden border border-surface-3 mb-6">
+            <div class="bg-white px-5 py-4">
+                <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium mb-1">Enrolled</div>
+                <div class="text-2xl font-semibold tabular" id="stat-total">—</div>
+            </div>
+            <div class="bg-white px-5 py-4">
+                <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium mb-1">Completed</div>
+                <div class="text-2xl font-semibold tabular text-ok" id="stat-completed">—</div>
+            </div>
+            <div class="bg-white px-5 py-4">
+                <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium mb-1">In Progress</div>
+                <div class="text-2xl font-semibold tabular text-accent" id="stat-in-progress">—</div>
+            </div>
+            <div class="bg-white px-5 py-4">
+                <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium mb-1">Not Started</div>
+                <div class="text-2xl font-semibold tabular text-ink-2" id="stat-not-started">—</div>
+            </div>
+            <div class="bg-white px-5 py-4">
+                <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium mb-1">Code Redeemed</div>
+                <div class="text-2xl font-semibold tabular" id="stat-redeemed">—</div>
+            </div>
+            <div class="bg-white px-5 py-4">
+                <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium mb-1">Avg Badges</div>
+                <div class="text-2xl font-semibold tabular" id="stat-avg">—</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6">
+            <div class="lg:col-span-3 bg-white border border-surface-3 rounded-lg p-5">
+                <div class="text-sm font-medium text-ink-1 mb-4">Badge distribution</div>
+                <canvas id="chart-distribution" height="190"></canvas>
+            </div>
+            <div class="lg:col-span-2 bg-white border border-surface-3 rounded-lg p-5">
+                <div class="text-sm font-medium text-ink-1 mb-4">Participant status</div>
+                <canvas id="chart-status" height="190"></canvas>
+            </div>
+        </div>
+
+        <!-- Trend (hidden until 2+ data points) -->
+        <div id="trend-section" class="hidden mb-6">
+            <div class="bg-white border border-surface-3 rounded-lg p-5">
+                <div class="text-sm font-medium text-ink-1 mb-4">Progress over time</div>
+                <canvas id="chart-trend" height="160"></canvas>
+            </div>
+        </div>
+
+        <!-- Search + filters + table -->
+        <div class="bg-white border border-surface-3 rounded-lg overflow-hidden">
+            <!-- Toolbar -->
+            <div class="px-5 py-3 border-b border-surface-2 flex flex-col sm:flex-row sm:items-center gap-3">
+                <div class="search-box flex items-center gap-2 border border-surface-3 rounded-md px-3 py-1.5 flex-1 max-w-sm transition-all">
+                    <svg class="w-4 h-4 text-ink-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <input id="search-input" type="text" placeholder="Search by name or email…"
+                           class="w-full text-sm bg-transparent outline-none placeholder:text-ink-3" autocomplete="off">
+                </div>
+                <div class="flex items-center gap-1 text-2xs font-medium">
+                    <button onclick="filterTable('all')" data-filter="all" class="filter-btn px-2.5 py-1 rounded bg-ink-0 text-white">All</button>
+                    <button onclick="filterTable('completed')" data-filter="completed" class="filter-btn px-2.5 py-1 rounded text-ink-2 hover:bg-surface-2">Completed</button>
+                    <button onclick="filterTable('in_progress')" data-filter="in_progress" class="filter-btn px-2.5 py-1 rounded text-ink-2 hover:bg-surface-2">In Progress</button>
+                    <button onclick="filterTable('not_started')" data-filter="not_started" class="filter-btn px-2.5 py-1 rounded text-ink-2 hover:bg-surface-2">Not Started</button>
+                    <div class="w-px h-4 bg-surface-3 mx-1"></div>
+                    <button onclick="filterTable('Student')" data-filter="Student" class="filter-btn px-2.5 py-1 rounded text-ink-2 hover:bg-surface-2">Students</button>
+                    <button onclick="filterTable('Developer')" data-filter="Developer" class="filter-btn px-2.5 py-1 rounded text-ink-2 hover:bg-surface-2">Developers</button>
+                </div>
+                <div class="text-2xs text-ink-3 tabular ml-auto" id="showing-count"></div>
+            </div>
+
+            <!-- Search results dropdown -->
+            <div id="search-results" class="hidden border-b border-surface-2 bg-surface-1 max-h-64 overflow-y-auto"></div>
+
+            <!-- Student detail panel -->
+            <div id="student-detail" class="hidden border-b border-surface-2 bg-surface-1 fade-in">
+                <div class="px-5 py-5 max-w-3xl">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h2 id="detail-name" class="text-lg font-semibold"></h2>
+                            <p id="detail-email" class="text-sm text-ink-2 mt-0.5"></p>
+                        </div>
+                        <button onclick="closeDetail()" class="text-ink-3 hover:text-ink-1 p-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span id="detail-track" class="chip chip-blue"></span>
+                        <span id="detail-status" class="chip"></span>
+                        <span id="detail-milestone" class="chip chip-neutral"></span>
+                        <span id="detail-redeemed" class="chip"></span>
+                    </div>
+                    <!-- Progress -->
+                    <div class="mb-5">
+                        <div class="flex items-baseline justify-between mb-2">
+                            <span class="text-sm text-ink-2">Progress</span>
+                            <span class="text-sm tabular"><strong id="detail-badges-count" class="text-ink-0">0</strong><span class="text-ink-3"> / 10 badges</span></span>
+                        </div>
+                        <div class="pbar">
+                            <div id="detail-progress-bar" class="pbar-fill bg-accent" style="width:0%"></div>
+                        </div>
+                    </div>
+                    <!-- Key numbers -->
+                    <div class="grid grid-cols-3 gap-4 mb-5">
+                        <div>
+                            <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium">Remaining</div>
+                            <div id="detail-remaining" class="text-lg font-semibold tabular mt-0.5">0</div>
+                        </div>
+                        <div>
+                            <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium">Days Left</div>
+                            <div id="detail-days" class="text-lg font-semibold tabular mt-0.5">0</div>
+                        </div>
+                        <div>
+                            <div class="text-2xs text-ink-3 uppercase tracking-wider font-medium">Pace Needed</div>
+                            <div id="detail-pace" class="text-lg font-semibold tabular mt-0.5">0</div>
+                        </div>
+                    </div>
+                    <!-- Badges earned -->
+                    <div id="detail-badges-list" class="text-sm"></div>
+                    <div class="mt-4 flex items-center gap-4 text-sm">
+                        <a id="detail-profile-link" href="#" target="_blank" class="text-accent hover:text-accent-hover font-medium">View profile &rarr;</a>
+                        <span class="text-ink-3">Rank <span id="detail-rank" class="text-ink-1 font-semibold tabular">#1</span> of <span id="detail-total" class="tabular">72</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="text-left text-2xs font-medium text-ink-3 uppercase tracking-wider border-b border-surface-2">
+                            <th class="px-5 py-2.5 w-12 cursor-pointer hover:text-ink-1" onclick="sortTable('rank')">#</th>
+                            <th class="px-5 py-2.5 cursor-pointer hover:text-ink-1" onclick="sortTable('name')">Name</th>
+                            <th class="px-5 py-2.5 w-24">Track</th>
+                            <th class="px-5 py-2.5 w-20 cursor-pointer hover:text-ink-1" onclick="sortTable('badges')">Badges</th>
+                            <th class="px-5 py-2.5 w-36">Progress</th>
+                            <th class="px-5 py-2.5 w-28">Milestone</th>
+                            <th class="px-5 py-2.5 w-20">Redeemed</th>
+                            <th class="px-5 py-2.5 w-28">Status</th>
+                            <th class="px-5 py-2.5 w-24 cursor-pointer hover:text-ink-1" onclick="sortTable('pace')">Pace</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Skill badge completion rate (10 Required Labs) -->
+        <div class="bg-white border border-surface-3 rounded-lg p-5 mt-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-surface-2">
+                <div>
+                    <h3 class="text-sm font-semibold text-ink-0">Skill Badge Completion Rate (10 Required Labs)</h3>
+                    <p class="text-2xs text-ink-2 mt-0.5">Live completion status across all participants exclusively for the official student curriculum &middot; Daily limit: 15 labs/day</p>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap">
+                    <span class="chip chip-blue tabular text-2xs">10 Target Labs</span>
+                    <span class="chip chip-ok tabular text-2xs">60 Credits Required</span>
+                    <span class="chip chip-neutral tabular text-2xs">200 Credits Allocated</span>
+                </div>
+            </div>
+            <div id="badge-breakdown" class="space-y-2.5"></div>
+        </div>
+    </main>
+
+    <footer class="border-t border-surface-3 mt-10">
+        <div class="max-w-[1320px] mx-auto px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-2xs text-ink-3">
+            <span>GDGC-JISU1 &middot; Google Cloud Learn with Communities 2026</span>
+            <span>Campaign deadline: November 23, 2026</span>
+        </div>
+    </footer>
+
+<script>
+// ── State ──
+let DATA = null, HISTORY = null;
+let currentFilter = 'all';
+let currentSort = { key: 'rank', asc: true };
+
+// ── Load ──
+async function loadData() {
+    try {
+        const r = await fetch('data/latest.json');
+        if (!r.ok) throw new Error();
+        DATA = await r.json();
+    } catch {
+        document.querySelector('main').innerHTML = `
+            <div class="mt-20 text-center">
+                <p class="text-ink-1 font-medium mb-2">Data not found</p>
+                <p class="text-sm text-ink-2">Run <code class="mono bg-surface-2 px-1.5 py-0.5 rounded">python scripts/ingest_csv.py</code> first, then serve with <code class="mono bg-surface-2 px-1.5 py-0.5 rounded">python -m http.server 8080</code></p>
+            </div>`;
+        return;
+    }
+    try { const r2 = await fetch('data/history.json'); if (r2.ok) HISTORY = await r2.json(); } catch {}
+    render();
+}
+
+function render() {
+    const { summary: s, participants: p } = DATA;
+
+    // Header
+    document.getElementById('report-date').textContent = s.report_date;
+    const dl = document.getElementById('days-left');
+    dl.textContent = s.days_remaining;
+    if (s.days_remaining <= 7) dl.classList.add('text-danger');
+
+    // Metrics
+    const inProgress = p.filter(x => x.badges_count > 0 && x.badges_count < 10).length;
+    const notStarted = p.filter(x => x.badges_count === 0).length;
+    document.getElementById('stat-total').textContent = s.total_participants;
+    document.getElementById('stat-completed').textContent = s.completed_count;
+    document.getElementById('stat-in-progress').textContent = inProgress;
+    document.getElementById('stat-not-started').textContent = notStarted;
+    document.getElementById('stat-redeemed').textContent = s.redeemed_count;
+    document.getElementById('stat-avg').textContent = s.avg_badges;
+
+    // Charts
+    renderDistChart(s.badge_distribution);
+    renderStatusChart(s.status_counts, s.total_participants);
+    renderBadgeBreakdown(p, DATA.curriculum || []);
+    renderTable(p);
+    setupSearch(p);
+
+    if (HISTORY && HISTORY.length > 1) {
+        document.getElementById('trend-section').classList.remove('hidden');
+        renderTrendChart();
+    }
+}
+
+// ── Charts ──
+Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+Chart.defaults.font.size = 11;
+Chart.defaults.color = '#6b7280';
+Chart.defaults.plugins.legend.labels.usePointStyle = true;
+Chart.defaults.plugins.legend.labels.pointStyleWidth = 8;
+
+function renderDistChart(dist) {
+    const ctx = document.getElementById('chart-distribution');
+    const vals = Object.values(dist);
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(dist).map(k => k),
+            datasets: [{
+                data: vals,
+                backgroundColor: vals.map((_, i) => i === 10 ? '#059669' : i === 0 ? '#e5e7eb' : '#2563eb'),
+                borderRadius: 3,
+                borderSkipped: false,
+                barPercentage: 0.7,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { title: c => c[0].label + ' badges', label: c => c.raw + ' participants' } }
+            },
+            scales: {
+                y: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: '#f3f4f6' }, border: { display: false } },
+                x: { grid: { display: false }, border: { display: false }, title: { display: true, text: 'Badges earned', color: '#9ca3af', font: { size: 10 } } }
+            }
+        }
+    });
+}
+
+function renderStatusChart(counts, total) {
+    const ctx = document.getElementById('chart-status');
+    const map = {
+        completed:     { label: 'Completed',      color: '#059669' },
+        ahead:         { label: 'Ahead',           color: '#2563eb' },
+        on_track:      { label: 'On Track',        color: '#d97706' },
+        at_risk:       { label: 'At Risk',         color: '#dc2626' },
+        redeemed_only: { label: 'Redeemed only',   color: '#f97316' },
+        not_started:   { label: 'Not started',     color: '#d1d5db' },
+    };
+    const keys = Object.keys(counts);
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: keys.map(k => map[k]?.label || k),
+            datasets: [{
+                data: keys.map(k => counts[k]),
+                backgroundColor: keys.map(k => map[k]?.color || '#6b7280'),
+                borderWidth: 1.5, borderColor: '#fff',
+            }]
+        },
+        options: {
+            responsive: true,
+            cutout: '65%',
+            plugins: {
+                legend: { position: 'right', labels: { padding: 12, font: { size: 11 } } },
+                tooltip: { callbacks: { label: c => { const pct = ((c.raw/total)*100).toFixed(1); return `${c.label}: ${c.raw} (${pct}%)`; } } }
+            }
+        }
+    });
+}
+
+function renderTrendChart() {
+    const ctx = document.getElementById('chart-trend');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: HISTORY.map(h => h.report_date),
+            datasets: [
+                { label: 'Completed', data: HISTORY.map(h => h.completed_count), borderColor: '#059669', backgroundColor: '#05966915', fill: true, tension: 0.3, borderWidth: 1.5, pointRadius: 3 },
+                { label: 'Avg badges', data: HISTORY.map(h => h.avg_badges), borderColor: '#2563eb', backgroundColor: '#2563eb10', fill: true, tension: 0.3, borderWidth: 1.5, pointRadius: 3, yAxisID: 'y1' },
+            ]
+        },
+        options: {
+            responsive: true,
+            interaction: { intersect: false, mode: 'index' },
+            plugins: { legend: { position: 'bottom' } },
+            scales: {
+                y:  { beginAtZero: true, grid: { color: '#f3f4f6' }, border: { display: false }, title: { display: true, text: 'Count', color: '#9ca3af' } },
+                y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, border: { display: false }, title: { display: true, text: 'Avg', color: '#9ca3af' } },
+                x:  { grid: { display: false }, border: { display: false } }
+            }
+        }
+    });
+}
+
+function renderBadgeBreakdown(participants, curriculum) {
+    const defaultCurriculum = [
+        {"name": "The Basics of Google Cloud Compute", "url": "https://www.skills.google/course_templates/754", "credits": 4},
+        {"name": "Configure Service Accounts and IAM Roles for Google Cloud", "url": "https://www.skills.google/course_templates/702", "credits": 4},
+        {"name": "Implement Speech and Language Solutions with Pre-trained APIs", "url": "https://www.skills.google/course_templates/700", "credits": 4},
+        {"name": "Develop AI-Powered Prototypes in Google AI Studio", "url": "https://www.skills.google/course_templates/1426", "credits": 0},
+        {"name": "Analyze Images with the Cloud Vision API", "url": "https://www.skills.google/course_templates/633", "credits": 12},
+        {"name": "Build a Website on Google Cloud", "url": "https://www.skills.google/course_templates/638", "credits": 13},
+        {"name": "Create Your First Gemini Enterprise Application", "url": "https://www.skills.google/course_templates/1586", "credits": 0},
+        {"name": "Store, Process, and Manage Data on Google Cloud - Console", "url": "https://www.skills.google/course_templates/658", "credits": 3},
+        {"name": "Using the Google Cloud Speech API", "url": "https://www.skills.google/course_templates/756", "credits": 4},
+        {"name": "Explore Generative AI in Agent Platform", "url": "https://www.skills.google/course_templates/959", "credits": 16}
+    ];
+
+    const curr = (curriculum && curriculum.length) ? curriculum : defaultCurriculum;
+    const total = participants.length;
+    const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    const items = curr.map((lab, i) => {
+        const target = norm(lab.name);
+        const count = participants.filter(p => {
+            if (p.completed_curriculum) {
+                return p.completed_curriculum.some(c => norm(c.name) === target);
+            }
+            return (p.badges_names || []).some(b => {
+                const nb = norm(b);
+                return nb.includes(target) || target.includes(nb);
+            });
+        }).length;
+
+        const pct = total > 0 ? ((count / total) * 100).toFixed(1) : "0.0";
+        return { ...lab, index: i + 1, count, pct: Number(pct) };
+    });
+
+    const el = document.getElementById('badge-breakdown');
+    el.innerHTML = items.map(lab => `
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 rounded-md border border-surface-2 hover:border-surface-3 hover:bg-surface-1 transition-colors">
+            <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-3">
+                <span class="text-2xs tabular text-ink-3 font-semibold w-5 text-right flex-shrink-0">${lab.index}.</span>
+                <a href="${lab.url}" target="_blank" class="text-sm font-medium text-ink-1 hover:text-accent truncate" title="Open ${lab.name}">
+                    ${lab.name}
+                </a>
+                <span class="chip ${lab.credits === 0 ? 'chip-ok' : 'chip-neutral'} text-2xs tabular flex-shrink-0">${lab.credits} cr</span>
+            </div>
+            <div class="flex items-center gap-3 flex-shrink-0 sm:w-80 justify-end">
+                <div class="pbar flex-1 h-1.5"><div class="pbar-fill ${lab.count > 0 ? 'bg-accent' : 'bg-surface-3'}" style="width:${lab.pct}%"></div></div>
+                <span class="text-2xs text-ink-1 tabular font-semibold w-24 text-right flex-shrink-0">${lab.count} / ${total} <span class="text-ink-3 font-normal">(${lab.pct}%)</span></span>
+                <a href="${lab.url}" target="_blank" class="chip chip-blue text-2xs hover:bg-blue-100 flex-shrink-0" title="Start lab">
+                    Link &rarr;
+                </a>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ── Table ──
+function renderTable(participants) {
+    const filtered = filterParticipants(participants, currentFilter);
+    const sorted = sortParticipants(filtered, currentSort);
+    document.getElementById('showing-count').textContent = sorted.length + ' of ' + participants.length;
+    document.getElementById('leaderboard-body').innerHTML = sorted.map(p => {
+        const statusMap = {
+            completed:     { label: 'Completed',  cls: 'chip-ok' },
+            ahead:         { label: 'Ahead',      cls: 'chip-blue' },
+            on_track:      { label: 'On Track',   cls: 'chip-warn' },
+            at_risk:       { label: 'At Risk',    cls: 'chip-danger' },
+            redeemed_only: { label: 'Redeemed',   cls: 'chip-warn' },
+            not_started:   { label: 'Not started',cls: 'chip-neutral' },
+        };
+        const st = statusMap[p.status] || { label: p.status, cls: 'chip-neutral' };
+        const dotColor = p.badges_count >= 10 ? 'bg-ok' : p.badges_count > 0 ? 'bg-accent' : 'bg-ink-4';
+        const paceStr = p.badges_count >= 10 ? '—' : p.pace_needed >= 999 ? '—' : p.pace_needed.toFixed(1) + '/d';
+        const paceColor = p.badges_count >= 10 ? 'text-ink-3' : p.pace_needed > 1.5 ? 'text-danger' : p.pace_needed > 0.8 ? 'text-warn' : 'text-ink-1';
+        return `<tr class="tbl-row cursor-pointer" onclick="showDetail('${p.email}')">
+            <td class="px-5 py-2.5 tabular text-ink-3 text-sm">${p.rank}</td>
+            <td class="px-5 py-2.5">
+                <div class="font-medium text-ink-0 text-sm">${p.name}</div>
+                <div class="text-2xs text-ink-3">${p.email}</div>
+            </td>
+            <td class="px-5 py-2.5"><span class="chip ${p.track==='Developer'?'chip-blue':'chip-neutral'}">${p.track}</span></td>
+            <td class="px-5 py-2.5">
+                <span class="font-semibold tabular">${p.badges_count}</span><span class="text-ink-3 text-2xs"> /10</span>
+            </td>
+            <td class="px-5 py-2.5">
+                <div class="flex items-center gap-2">
+                    <div class="pbar flex-1"><div class="pbar-fill ${dotColor}" style="width:${p.completion_pct}%"></div></div>
+                    <span class="text-2xs text-ink-3 tabular w-8 text-right">${p.completion_pct}%</span>
+                </div>
+            </td>
+            <td class="px-5 py-2.5 text-2xs text-ink-2">${p.milestone === 'No Milestone' ? '—' : p.milestone}</td>
+            <td class="px-5 py-2.5 text-center"><span class="dot ${p.access_code_redeemed ? 'bg-ok' : 'bg-ink-4'}"></span></td>
+            <td class="px-5 py-2.5"><span class="chip ${st.cls}">${st.label}</span></td>
+            <td class="px-5 py-2.5 tabular text-sm ${paceColor}">${paceStr}</td>
+        </tr>`;
+    }).join('');
+}
+
+// ── Filter & Sort ──
+function filterParticipants(list, f) {
+    if (f === 'all') return list;
+    if (f === 'completed') return list.filter(p => p.badges_count >= 10);
+    if (f === 'in_progress') return list.filter(p => p.badges_count > 0 && p.badges_count < 10);
+    if (f === 'not_started') return list.filter(p => p.badges_count === 0);
+    if (f === 'Student' || f === 'Developer') return list.filter(p => p.track === f);
+    return list;
+}
+
+function filterTable(f) {
+    currentFilter = f;
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.className = b.dataset.filter === f
+            ? 'filter-btn px-2.5 py-1 rounded bg-ink-0 text-white text-2xs font-medium'
+            : 'filter-btn px-2.5 py-1 rounded text-ink-2 hover:bg-surface-2 text-2xs font-medium';
+    });
+    renderTable(DATA.participants);
+}
+
+function sortParticipants(list, s) {
+    return [...list].sort((a, b) => {
+        let va, vb;
+        if (s.key === 'rank') { va = a.rank; vb = b.rank; }
+        else if (s.key === 'name') { va = a.name.toLowerCase(); vb = b.name.toLowerCase(); }
+        else if (s.key === 'badges') { va = a.badges_count; vb = b.badges_count; }
+        else if (s.key === 'pace') { va = a.pace_needed; vb = b.pace_needed; }
+        else { va = a[s.key]; vb = b[s.key]; }
+        if (va < vb) return s.asc ? -1 : 1;
+        if (va > vb) return s.asc ? 1 : -1;
+        return 0;
+    });
+}
+
+function sortTable(key) {
+    if (currentSort.key === key) currentSort.asc = !currentSort.asc;
+    else currentSort = { key, asc: key === 'name' };
+    renderTable(DATA.participants);
+}
+
+// ── Search ──
+function setupSearch(participants) {
+    const input = document.getElementById('search-input');
+    const box = document.getElementById('search-results');
+    input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        if (q.length < 2) { box.classList.add('hidden'); return; }
+        const hits = participants.filter(p => p.name.toLowerCase().includes(q) || p.email.toLowerCase().includes(q)).slice(0, 6);
+        if (!hits.length) {
+            box.innerHTML = '<div class="px-5 py-3 text-sm text-ink-3">No results</div>';
+        } else {
+            box.innerHTML = hits.map(p => `
+                <div class="px-5 py-2.5 flex items-center justify-between hover:bg-surface-2 cursor-pointer transition-colors"
+                     onclick="showDetail('${p.email}'); document.getElementById('search-results').classList.add('hidden');">
+                    <div>
+                        <span class="text-sm font-medium text-ink-0">${hl(p.name,q)}</span>
+                        <span class="text-2xs text-ink-3 ml-2">${hl(p.email,q)}</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm tabular font-medium">${p.badges_count}/10</span>
+                        <span class="chip ${p.badges_count>=10?'chip-ok':p.badges_count>0?'chip-blue':'chip-neutral'} text-2xs">${p.badges_count>=10?'Done':p.badges_count>0?'In progress':'Not started'}</span>
+                    </div>
+                </div>`).join('');
+        }
+        box.classList.remove('hidden');
+    });
+    document.addEventListener('click', e => { if (!input.contains(e.target) && !box.contains(e.target)) box.classList.add('hidden'); });
+}
+
+function hl(text, q) {
+    const i = text.toLowerCase().indexOf(q);
+    if (i === -1) return text;
+    return text.slice(0,i) + '<mark class="bg-yellow-200/70 rounded-sm px-px">' + text.slice(i,i+q.length) + '</mark>' + text.slice(i+q.length);
+}
+
+// ── Detail Panel ──
+function showDetail(email) {
+    const p = DATA.participants.find(x => x.email === email);
+    if (!p) return;
+    const d = document.getElementById('student-detail');
+    d.classList.remove('hidden');
+    d.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    document.getElementById('detail-name').textContent = p.name;
+    document.getElementById('detail-email').textContent = p.email;
+    document.getElementById('detail-track').textContent = p.track;
+
+    const stMap = {
+        completed: ['Completed','chip-ok'], ahead: ['Ahead','chip-blue'],
+        on_track: ['On Track','chip-warn'], at_risk: ['At Risk','chip-danger'],
+        redeemed_only: ['Redeemed only','chip-warn'], not_started: ['Not started','chip-neutral']
+    };
+    const [stLabel, stCls] = stMap[p.status] || [p.status, 'chip-neutral'];
+    const stEl = document.getElementById('detail-status');
+    stEl.textContent = stLabel; stEl.className = 'chip ' + stCls;
+
+    document.getElementById('detail-milestone').textContent = p.milestone === 'No Milestone' ? 'No milestone' : p.milestone;
+    document.getElementById('detail-badges-count').textContent = p.badges_count;
+    document.getElementById('detail-progress-bar').style.width = p.completion_pct + '%';
+    document.getElementById('detail-remaining').textContent = p.badges_remaining;
+    document.getElementById('detail-days').textContent = p.days_remaining;
+    document.getElementById('detail-pace').textContent = p.badges_count >= 10 ? 'Done' : p.pace_needed >= 999 ? '—' : p.pace_needed.toFixed(2) + '/day';
+    document.getElementById('detail-rank').textContent = '#' + p.rank;
+    document.getElementById('detail-total').textContent = DATA.summary.total_participants;
+
+    const rEl = document.getElementById('detail-redeemed');
+    rEl.textContent = p.access_code_redeemed ? 'Code redeemed' : 'Code not redeemed';
+    rEl.className = 'chip ' + (p.access_code_redeemed ? 'chip-ok' : 'chip-neutral');
+
+    document.getElementById('detail-profile-link').href = p.profile_url;
+
+    const bl = document.getElementById('detail-badges-list');
+    
+    // Check if we have student curriculum breakdown
+    const compList = p.completed_curriculum || [];
+    const pendList = p.pending_curriculum || [];
+    const crSpent = p.credits_spent !== undefined ? p.credits_spent : 0;
+    const crNeeded = p.credits_needed !== undefined ? p.credits_needed : 0;
+
+    let html = `
+        <div class="flex items-center justify-between mb-2">
+            <span class="text-2xs text-ink-3 uppercase tracking-wider font-medium">Curriculum Status & Required Labs</span>
+            <span class="text-2xs text-ink-2 tabular">Credits spent: <strong class="text-ink-0">${crSpent}</strong> &middot; Needed: <strong class="text-accent">${crNeeded}</strong> / 200</span>
+        </div>
+        <div class="space-y-1.5 mb-3">
+    `;
+
+    // Render Completed
+    if (compList.length > 0) {
+        html += compList.map(c => `
+            <div class="flex items-center justify-between text-xs py-1 px-2 rounded bg-emerald-50/60 border border-emerald-100">
+                <div class="flex items-center gap-2 min-w-0 pr-2">
+                    <svg class="w-4 h-4 text-ok flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <a href="${c.url}" target="_blank" class="font-medium text-emerald-900 hover:underline truncate">${c.name}</a>
+                </div>
+                <span class="chip chip-ok text-2xs tabular">${c.credits} cr &middot; Completed</span>
+            </div>
+        `).join('');
+    }
+
+    // Render Pending
+    if (pendList.length > 0) {
+        html += pendList.map(c => `
+            <div class="flex items-center justify-between text-xs py-1 px-2 rounded bg-surface-1 border border-surface-2 hover:border-accent/40 transition-colors">
+                <div class="flex items-center gap-2 min-w-0 pr-2">
+                    <span class="w-3.5 h-3.5 rounded-full border border-ink-3 inline-block flex-shrink-0"></span>
+                    <a href="${c.url}" target="_blank" class="text-ink-1 hover:text-accent font-medium truncate">${c.name}</a>
+                </div>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <span class="text-2xs text-ink-3 tabular">${c.credits} cr</span>
+                    <a href="${c.url}" target="_blank" class="chip chip-blue text-2xs">Start lab &rarr;</a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    html += `</div>`;
+
+    // If developer track has additional badges not in student curriculum
+    if (p.badges_names && p.badges_names.length > compList.length) {
+        html += `<div class="text-2xs text-ink-3 uppercase tracking-wider font-medium mb-1 mt-3">Other badges completed</div>
+                 <div class="flex flex-wrap gap-1">` +
+                 p.badges_names.filter(b => !compList.some(c => c.name.toLowerCase().includes(b.toLowerCase()) || b.toLowerCase().includes(c.name.toLowerCase())))
+                 .map(b => `<span class="chip chip-neutral text-2xs">${b}</span>`).join('') +
+                 `</div>`;
+    }
+
+    bl.innerHTML = html;
+}
+
+function closeDetail() { document.getElementById('student-detail').classList.add('hidden'); }
+
+// ── Init ──
+loadData();
+</script>
+</body>
+</html>
