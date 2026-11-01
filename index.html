@@ -128,23 +128,28 @@
             </div>
         </div>
 
-        <!-- Charts -->
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6">
-            <div class="lg:col-span-3 bg-white border border-surface-3 rounded-lg p-5">
-                <div class="text-sm font-medium text-ink-1 mb-4">Badge distribution</div>
-                <canvas id="chart-distribution" height="190"></canvas>
+        <!-- Charts: 3 Compact Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
+            <div class="bg-white border border-surface-3 rounded-lg p-4 flex flex-col justify-between">
+                <div class="text-xs font-semibold text-ink-1 uppercase tracking-wider mb-2">Badge distribution</div>
+                <div class="h-44 relative">
+                    <canvas id="chart-distribution"></canvas>
+                </div>
             </div>
-            <div class="lg:col-span-2 bg-white border border-surface-3 rounded-lg p-5">
-                <div class="text-sm font-medium text-ink-1 mb-4">Participant status</div>
-                <canvas id="chart-status" height="190"></canvas>
+            <div class="bg-white border border-surface-3 rounded-lg p-4 flex flex-col justify-between">
+                <div class="text-xs font-semibold text-ink-1 uppercase tracking-wider mb-2">Participant status</div>
+                <div class="h-44 relative">
+                    <canvas id="chart-status"></canvas>
+                </div>
             </div>
-        </div>
-
-        <!-- Trend (hidden until 2+ data points) -->
-        <div id="trend-section" class="hidden mb-6">
-            <div class="bg-white border border-surface-3 rounded-lg p-5">
-                <div class="text-sm font-medium text-ink-1 mb-4">Progress over time</div>
-                <canvas id="chart-trend" height="160"></canvas>
+            <div class="bg-white border border-surface-3 rounded-lg p-4 flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="text-xs font-semibold text-ink-1 uppercase tracking-wider">Progress over time</div>
+                    <span class="text-2xs text-ink-3">Daily trend</span>
+                </div>
+                <div class="h-44 relative flex items-center justify-center" id="trend-wrapper">
+                    <canvas id="chart-trend"></canvas>
+                </div>
             </div>
         </div>
 
@@ -320,17 +325,19 @@ function render() {
     setupSearch(p);
 
     if (HISTORY && HISTORY.length > 1) {
-        document.getElementById('trend-section').classList.remove('hidden');
         renderTrendChart();
+    } else {
+        const tw = document.getElementById('trend-wrapper');
+        if (tw) tw.innerHTML = '<span class="text-2xs text-ink-3">Trend will appear after 2+ days</span>';
     }
 }
 
 // ── Charts ──
 Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
-Chart.defaults.font.size = 11;
-Chart.defaults.color = '#6b7280';
+Chart.defaults.font.size = 10;
+Chart.defaults.color = '#9ca3af';
 Chart.defaults.plugins.legend.labels.usePointStyle = true;
-Chart.defaults.plugins.legend.labels.pointStyleWidth = 8;
+Chart.defaults.plugins.legend.labels.pointStyleWidth = 6;
 
 function renderDistChart(dist) {
     const ctx = document.getElementById('chart-distribution');
@@ -342,20 +349,21 @@ function renderDistChart(dist) {
             datasets: [{
                 data: vals,
                 backgroundColor: vals.map((_, i) => i === 10 ? '#059669' : i === 0 ? '#e5e7eb' : '#2563eb'),
-                borderRadius: 3,
+                borderRadius: 2,
                 borderSkipped: false,
-                barPercentage: 0.7,
+                barPercentage: 0.65,
             }]
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: { display: false },
                 tooltip: { callbacks: { title: c => c[0].label + ' badges', label: c => c.raw + ' participants' } }
             },
             scales: {
-                y: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: '#f3f4f6' }, border: { display: false } },
-                x: { grid: { display: false }, border: { display: false }, title: { display: true, text: 'Badges earned', color: '#9ca3af', font: { size: 10 } } }
+                y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 9 } }, grid: { color: '#f3f4f6' }, border: { display: false } },
+                x: { grid: { display: false }, border: { display: false }, ticks: { font: { size: 9 } } }
             }
         }
     });
@@ -368,7 +376,7 @@ function renderStatusChart(counts, total) {
         ahead:         { label: 'Ahead',           color: '#2563eb' },
         on_track:      { label: 'On Track',        color: '#d97706' },
         at_risk:       { label: 'At Risk',         color: '#dc2626' },
-        redeemed_only: { label: 'Redeemed only',   color: '#f97316' },
+        redeemed_only: { label: 'Redeemed',        color: '#f97316' },
         not_started:   { label: 'Not started',     color: '#d1d5db' },
     };
     const keys = Object.keys(counts);
@@ -384,9 +392,10 @@ function renderStatusChart(counts, total) {
         },
         options: {
             responsive: true,
-            cutout: '65%',
+            maintainAspectRatio: false,
+            cutout: '68%',
             plugins: {
-                legend: { position: 'right', labels: { padding: 12, font: { size: 11 } } },
+                legend: { position: 'bottom', labels: { padding: 8, font: { size: 9 } } },
                 tooltip: { callbacks: { label: c => { const pct = ((c.raw/total)*100).toFixed(1); return `${c.label}: ${c.raw} (${pct}%)`; } } }
             }
         }
@@ -395,23 +404,55 @@ function renderStatusChart(counts, total) {
 
 function renderTrendChart() {
     const ctx = document.getElementById('chart-trend');
+    if (!ctx) return;
+    
+    const formatDate = d => {
+        try {
+            const parts = d.split('-');
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return `${parseInt(parts[2])} ${months[parseInt(parts[1])-1]}`;
+        } catch { return d; }
+    };
+
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: HISTORY.map(h => h.report_date),
+            labels: HISTORY.map(h => formatDate(h.report_date)),
             datasets: [
-                { label: 'Completed', data: HISTORY.map(h => h.completed_count), borderColor: '#059669', backgroundColor: '#05966915', fill: true, tension: 0.3, borderWidth: 1.5, pointRadius: 3 },
-                { label: 'Avg badges', data: HISTORY.map(h => h.avg_badges), borderColor: '#2563eb', backgroundColor: '#2563eb10', fill: true, tension: 0.3, borderWidth: 1.5, pointRadius: 3, yAxisID: 'y1' },
+                {
+                    label: 'Completed',
+                    data: HISTORY.map(h => h.completed_count),
+                    borderColor: '#059669',
+                    backgroundColor: 'rgba(5, 150, 105, 0.08)',
+                    fill: true,
+                    tension: 0.25,
+                    borderWidth: 1.5,
+                    pointRadius: 2.5
+                },
+                {
+                    label: 'Avg Badges',
+                    data: HISTORY.map(h => h.avg_badges),
+                    borderColor: '#2563eb',
+                    backgroundColor: 'transparent',
+                    borderDash: [3, 3],
+                    tension: 0.25,
+                    borderWidth: 1.5,
+                    pointRadius: 2.5,
+                    yAxisID: 'y1'
+                },
             ]
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             interaction: { intersect: false, mode: 'index' },
-            plugins: { legend: { position: 'bottom' } },
+            plugins: {
+                legend: { position: 'bottom', labels: { padding: 6, font: { size: 9 } } }
+            },
             scales: {
-                y:  { beginAtZero: true, grid: { color: '#f3f4f6' }, border: { display: false }, title: { display: true, text: 'Count', color: '#9ca3af' } },
-                y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, border: { display: false }, title: { display: true, text: 'Avg', color: '#9ca3af' } },
-                x:  { grid: { display: false }, border: { display: false } }
+                y:  { beginAtZero: true, grid: { color: '#f3f4f6' }, border: { display: false }, ticks: { stepSize: 2, font: { size: 9 } } },
+                y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, border: { display: false }, ticks: { font: { size: 9 } } },
+                x:  { grid: { display: false }, border: { display: false }, ticks: { font: { size: 9 } } }
             }
         }
     });
