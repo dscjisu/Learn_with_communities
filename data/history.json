@@ -20,5 +20,27 @@
       "9": 0,
       "10": 2
     }
+  },
+  {
+    "report_date": "2026-11-01",
+    "total_participants": 72,
+    "redeemed_count": 24,
+    "completed_count": 4,
+    "at_risk_count": 0,
+    "not_started_count": 65,
+    "avg_badges": 0.88,
+    "badge_distribution": {
+      "0": 62,
+      "1": 1,
+      "2": 2,
+      "3": 0,
+      "4": 0,
+      "5": 2,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 0,
+      "10": 4
+    }
   }
 ]
