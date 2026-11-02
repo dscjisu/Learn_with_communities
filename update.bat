@@ -47,7 +47,7 @@ echo [3/4] Committing and pushing updates to GitHub...
 git add data/
 git commit -m "Update daily report data" >nul 2>&1
 if %ERRORLEVEL% equ 0 (
-    echo   Pushing to GitHub (Vercel will auto-deploy)...
+    echo   Pushing to GitHub - Vercel will auto-deploy...
     git push origin main
 ) else (
     echo   No changes detected or git commit skipped.
@@ -59,7 +59,7 @@ netstat -ano | findstr :8080 | findstr LISTENING >nul
 if %ERRORLEVEL% neq 0 (
     echo   Starting local server at http://localhost:8080...
     start "" /b python -m http.server 8080
-    timeout /t 1 >nul
+    ping 127.0.0.1 -n 2 >nul
 ) else (
     echo   Server already running on port 8080.
 )
