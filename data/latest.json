@@ -1,43 +1,42 @@
 {
   "summary": {
-    "report_date": "2026-11-04",
-    "generated_at": "2026-11-05T08:43:07.126211",
+    "report_date": "2026-11-06",
+    "generated_at": "2026-11-06T19:14:46.196861",
     "deadline": "2026-11-23",
-    "days_remaining": 18,
+    "days_remaining": 17,
     "total_participants": 72,
     "total_students": 67,
     "total_developers": 5,
-    "redeemed_count": 30,
-    "not_redeemed_count": 42,
-    "completed_count": 10,
+    "redeemed_count": 32,
+    "not_redeemed_count": 40,
+    "completed_count": 11,
     "at_risk_count": 0,
-    "not_started_count": 56,
+    "not_started_count": 55,
     "badge_distribution": {
-      "0": 53,
+      "0": 52,
       "1": 2,
       "2": 1,
-      "3": 1,
+      "3": 0,
       "4": 0,
-      "5": 3,
+      "5": 2,
       "6": 0,
-      "7": 0,
-      "8": 2,
+      "7": 1,
+      "8": 3,
       "9": 0,
-      "10": 10
+      "10": 11
     },
     "status_counts": {
-      "completed": 10,
+      "completed": 11,
       "ahead": 6,
-      "not_started": 40,
-      "redeemed_only": 16
+      "not_started": 38,
+      "redeemed_only": 17
     },
     "milestone_counts": {
-      "Milestone 3": 10,
-      "Milestone 2": 5,
-      "Milestone 1": 1,
-      "No Milestone": 56
+      "Milestone 3": 11,
+      "Milestone 2": 6,
+      "No Milestone": 55
     },
-    "avg_badges": 1.92
+    "avg_badges": 2.15
   },
   "curriculum": [
     {
@@ -175,7 +174,7 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
       "rank": 1
@@ -263,7 +262,7 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
       "rank": 2
@@ -351,10 +350,97 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
       "rank": 3
+    },
+    {
+      "name": "Poulami Neogi",
+      "email": "neogipoulami301@gmail.com",
+      "track": "Developer",
+      "profile_url": "https://www.skills.google/public_profiles/a8c63f6b-2093-4f87-a75a-990e6eec7e34",
+      "profile_status": "All Good",
+      "dev_profile_url": "https://me.developers.google.com/u/100084357804231768584",
+      "dev_profile_status": "Wrong Google Developer Program Profile URL: 404",
+      "access_code_redeemed": true,
+      "milestone": "Milestone 3",
+      "gear_badges": null,
+      "badges_count": 10,
+      "badges_names": [
+        "Analyze Images with the Cloud Vision API",
+        "Configure Service Accounts and IAM Roles for Google Cloud",
+        "Create Your First Gemini Enterprise Application",
+        "Develop AI-Powered Prototypes in Google AI Studio",
+        "Explore Generative AI in Agent Platform",
+        "Google DeepMind: Train A Small Language Model",
+        "Implement Speech and Language Solutions with Pre-trained APIs",
+        "Orchestrate Multi-agent Workflows with Gemini Enterprise",
+        "Prompt Design in Agent Platform",
+        "The Basics of Google Cloud Compute"
+      ],
+      "completed_curriculum": [
+        {
+          "name": "The Basics of Google Cloud Compute",
+          "url": "https://www.skills.google/course_templates/754",
+          "credits": 4
+        },
+        {
+          "name": "Configure Service Accounts and IAM Roles for Google Cloud",
+          "url": "https://www.skills.google/course_templates/702",
+          "credits": 4
+        },
+        {
+          "name": "Implement Speech and Language Solutions with Pre-trained APIs",
+          "url": "https://www.skills.google/course_templates/700",
+          "credits": 4
+        },
+        {
+          "name": "Develop AI-Powered Prototypes in Google AI Studio",
+          "url": "https://www.skills.google/course_templates/1426",
+          "credits": 0
+        },
+        {
+          "name": "Analyze Images with the Cloud Vision API",
+          "url": "https://www.skills.google/course_templates/633",
+          "credits": 12
+        },
+        {
+          "name": "Create Your First Gemini Enterprise Application",
+          "url": "https://www.skills.google/course_templates/1586",
+          "credits": 0
+        },
+        {
+          "name": "Explore Generative AI in Agent Platform",
+          "url": "https://www.skills.google/course_templates/959",
+          "credits": 16
+        }
+      ],
+      "pending_curriculum": [
+        {
+          "name": "Build a Website on Google Cloud",
+          "url": "https://www.skills.google/course_templates/638",
+          "credits": 13
+        },
+        {
+          "name": "Store, Process, and Manage Data on Google Cloud - Console",
+          "url": "https://www.skills.google/course_templates/658",
+          "credits": 3
+        },
+        {
+          "name": "Using the Google Cloud Speech API",
+          "url": "https://www.skills.google/course_templates/756",
+          "credits": 4
+        }
+      ],
+      "credits_spent": 40,
+      "credits_needed": 20,
+      "completion_pct": 100.0,
+      "badges_remaining": 0,
+      "days_remaining": 17,
+      "pace_needed": 0,
+      "status": "completed",
+      "rank": 4
     },
     {
       "name": "Ratul Kole",
@@ -439,10 +525,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 4
+      "rank": 5
     },
     {
       "name": "Rishav Roy",
@@ -526,10 +612,10 @@
       "credits_needed": 20,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 5
+      "rank": 6
     },
     {
       "name": "Sagnik Maitra",
@@ -614,10 +700,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 6
+      "rank": 7
     },
     {
       "name": "Sandip Sahoo",
@@ -702,10 +788,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 7
+      "rank": 8
     },
     {
       "name": "Sayan Nandi",
@@ -790,10 +876,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 8
+      "rank": 9
     },
     {
       "name": "Sohel Sheikh",
@@ -878,10 +964,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 9
+      "rank": 10
     },
     {
       "name": "Sonu Kumar",
@@ -966,10 +1052,97 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 18,
+      "days_remaining": 17,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 10
+      "rank": 11
+    },
+    {
+      "name": "Imtiaz sarkar",
+      "email": "Theimtiaz863@gmail.com",
+      "track": "Student",
+      "profile_url": "https://www.skills.google/public_profiles/352e2eba-e32e-445c-8337-d7faeb29f8c7",
+      "profile_status": "All Good",
+      "dev_profile_url": null,
+      "dev_profile_status": null,
+      "access_code_redeemed": true,
+      "milestone": "Milestone 2",
+      "gear_badges": null,
+      "badges_count": 8,
+      "badges_names": [
+        "Analyze Images with the Cloud Vision API",
+        "Build a Website on Google Cloud",
+        "Configure Service Accounts and IAM Roles for Google Cloud",
+        "Create Your First Gemini Enterprise Application",
+        "Develop AI-Powered Prototypes in Google AI Studio",
+        "Implement Speech and Language Solutions with Pre-trained APIs",
+        "Store",
+        "Process",
+        "and Manage Data on Google Cloud - Console",
+        "The Basics of Google Cloud Compute"
+      ],
+      "completed_curriculum": [
+        {
+          "name": "The Basics of Google Cloud Compute",
+          "url": "https://www.skills.google/course_templates/754",
+          "credits": 4
+        },
+        {
+          "name": "Configure Service Accounts and IAM Roles for Google Cloud",
+          "url": "https://www.skills.google/course_templates/702",
+          "credits": 4
+        },
+        {
+          "name": "Implement Speech and Language Solutions with Pre-trained APIs",
+          "url": "https://www.skills.google/course_templates/700",
+          "credits": 4
+        },
+        {
+          "name": "Develop AI-Powered Prototypes in Google AI Studio",
+          "url": "https://www.skills.google/course_templates/1426",
+          "credits": 0
+        },
+        {
+          "name": "Analyze Images with the Cloud Vision API",
+          "url": "https://www.skills.google/course_templates/633",
+          "credits": 12
+        },
+        {
+          "name": "Build a Website on Google Cloud",
+          "url": "https://www.skills.google/course_templates/638",
+          "credits": 13
+        },
+        {
+          "name": "Create Your First Gemini Enterprise Application",
+          "url": "https://www.skills.google/course_templates/1586",
+          "credits": 0
+        },
+        {
+          "name": "Store, Process, and Manage Data on Google Cloud - Console",
+          "url": "https://www.skills.google/course_templates/658",
+          "credits": 3
+        }
+      ],
+      "pending_curriculum": [
+        {
+          "name": "Using the Google Cloud Speech API",
+          "url": "https://www.skills.google/course_templates/756",
+          "credits": 4
+        },
+        {
+          "name": "Explore Generative AI in Agent Platform",
+          "url": "https://www.skills.google/course_templates/959",
+          "credits": 16
+        }
+      ],
+      "credits_spent": 40,
+      "credits_needed": 20,
+      "completion_pct": 80.0,
+      "badges_remaining": 2,
+      "days_remaining": 17,
+      "pace_needed": 0.12,
+      "status": "ahead",
+      "rank": 12
     },
     {
       "name": "MD FAIZ AHMED",
@@ -1051,10 +1224,10 @@
       "credits_needed": 20,
       "completion_pct": 80.0,
       "badges_remaining": 2,
-      "days_remaining": 18,
-      "pace_needed": 0.11,
+      "days_remaining": 17,
+      "pace_needed": 0.12,
       "status": "ahead",
-      "rank": 11
+      "rank": 13
     },
     {
       "name": "Ratnesh Kumar",
@@ -1138,48 +1311,33 @@
       "credits_needed": 25,
       "completion_pct": 80.0,
       "badges_remaining": 2,
-      "days_remaining": 18,
-      "pace_needed": 0.11,
+      "days_remaining": 17,
+      "pace_needed": 0.12,
       "status": "not_started",
-      "rank": 12
+      "rank": 14
     },
     {
-      "name": "Poulami Neogi",
-      "email": "neogipoulami301@gmail.com",
-      "track": "Developer",
-      "profile_url": "https://www.skills.google/public_profiles/a8c63f6b-2093-4f87-a75a-990e6eec7e34",
+      "name": "Sagnik Dutta",
+      "email": "sagnikdevelops@gmail.com",
+      "track": "Student",
+      "profile_url": "https://www.skills.google/public_profiles/8aa4b8d0-0718-4dcc-955b-4a9479be2a0b",
       "profile_status": "All Good",
-      "dev_profile_url": "https://me.developers.google.com/u/100084357804231768584",
-      "dev_profile_status": "Wrong Google Developer Program Profile URL: 404",
+      "dev_profile_url": null,
+      "dev_profile_status": null,
       "access_code_redeemed": true,
       "milestone": "Milestone 2",
       "gear_badges": null,
-      "badges_count": 5,
+      "badges_count": 7,
       "badges_names": [
+        "Analyze Images with the Cloud Vision API",
+        "Build a Website on Google Cloud",
+        "Configure Service Accounts and IAM Roles for Google Cloud",
         "Create Your First Gemini Enterprise Application",
         "Develop AI-Powered Prototypes in Google AI Studio",
-        "Explore Generative AI in Agent Platform",
-        "Google DeepMind: Train A Small Language Model",
-        "Orchestrate Multi-agent Workflows with Gemini Enterprise"
+        "Implement Speech and Language Solutions with Pre-trained APIs",
+        "The Basics of Google Cloud Compute"
       ],
       "completed_curriculum": [
-        {
-          "name": "Develop AI-Powered Prototypes in Google AI Studio",
-          "url": "https://www.skills.google/course_templates/1426",
-          "credits": 0
-        },
-        {
-          "name": "Create Your First Gemini Enterprise Application",
-          "url": "https://www.skills.google/course_templates/1586",
-          "credits": 0
-        },
-        {
-          "name": "Explore Generative AI in Agent Platform",
-          "url": "https://www.skills.google/course_templates/959",
-          "credits": 16
-        }
-      ],
-      "pending_curriculum": [
         {
           "name": "The Basics of Google Cloud Compute",
           "url": "https://www.skills.google/course_templates/754",
@@ -1196,6 +1354,11 @@
           "credits": 4
         },
         {
+          "name": "Develop AI-Powered Prototypes in Google AI Studio",
+          "url": "https://www.skills.google/course_templates/1426",
+          "credits": 0
+        },
+        {
           "name": "Analyze Images with the Cloud Vision API",
           "url": "https://www.skills.google/course_templates/633",
           "credits": 12
@@ -1206,6 +1369,13 @@
           "credits": 13
         },
         {
+          "name": "Create Your First Gemini Enterprise Application",
+          "url": "https://www.skills.google/course_templates/1586",
+          "credits": 0
+        }
+      ],
+      "pending_curriculum": [
+        {
           "name": "Store, Process, and Manage Data on Google Cloud - Console",
           "url": "https://www.skills.google/course_templates/658",
           "credits": 3
@@ -1214,16 +1384,21 @@
           "name": "Using the Google Cloud Speech API",
           "url": "https://www.skills.google/course_templates/756",
           "credits": 4
+        },
+        {
+          "name": "Explore Generative AI in Agent Platform",
+          "url": "https://www.skills.google/course_templates/959",
+          "credits": 16
         }
       ],
-      "credits_spent": 16,
-      "credits_needed": 44,
-      "completion_pct": 50.0,
-      "badges_remaining": 5,
-      "days_remaining": 18,
-      "pace_needed": 0.28,
+      "credits_spent": 37,
+      "credits_needed": 23,
+      "completion_pct": 70.0,
+      "badges_remaining": 3,
+      "days_remaining": 17,
+      "pace_needed": 0.18,
       "status": "ahead",
-      "rank": 13
+      "rank": 15
     },
     {
       "name": "Pushkar Biswas",
@@ -1304,10 +1479,10 @@
       "credits_needed": 28,
       "completion_pct": 50.0,
       "badges_remaining": 5,
-      "days_remaining": 18,
-      "pace_needed": 0.28,
+      "days_remaining": 17,
+      "pace_needed": 0.29,
       "status": "ahead",
-      "rank": 14
+      "rank": 16
     },
     {
       "name": "Sayan Nandi",
@@ -1386,90 +1561,10 @@
       "credits_needed": 48,
       "completion_pct": 50.0,
       "badges_remaining": 5,
-      "days_remaining": 18,
-      "pace_needed": 0.28,
+      "days_remaining": 17,
+      "pace_needed": 0.29,
       "status": "not_started",
-      "rank": 15
-    },
-    {
-      "name": "Sagnik Dutta",
-      "email": "sagnikdevelops@gmail.com",
-      "track": "Student",
-      "profile_url": "https://www.skills.google/public_profiles/8aa4b8d0-0718-4dcc-955b-4a9479be2a0b",
-      "profile_status": "All Good",
-      "dev_profile_url": null,
-      "dev_profile_status": null,
-      "access_code_redeemed": true,
-      "milestone": "Milestone 1",
-      "gear_badges": null,
-      "badges_count": 3,
-      "badges_names": [
-        "Configure Service Accounts and IAM Roles for Google Cloud",
-        "Create Your First Gemini Enterprise Application",
-        "The Basics of Google Cloud Compute"
-      ],
-      "completed_curriculum": [
-        {
-          "name": "The Basics of Google Cloud Compute",
-          "url": "https://www.skills.google/course_templates/754",
-          "credits": 4
-        },
-        {
-          "name": "Configure Service Accounts and IAM Roles for Google Cloud",
-          "url": "https://www.skills.google/course_templates/702",
-          "credits": 4
-        },
-        {
-          "name": "Create Your First Gemini Enterprise Application",
-          "url": "https://www.skills.google/course_templates/1586",
-          "credits": 0
-        }
-      ],
-      "pending_curriculum": [
-        {
-          "name": "Implement Speech and Language Solutions with Pre-trained APIs",
-          "url": "https://www.skills.google/course_templates/700",
-          "credits": 4
-        },
-        {
-          "name": "Develop AI-Powered Prototypes in Google AI Studio",
-          "url": "https://www.skills.google/course_templates/1426",
-          "credits": 0
-        },
-        {
-          "name": "Analyze Images with the Cloud Vision API",
-          "url": "https://www.skills.google/course_templates/633",
-          "credits": 12
-        },
-        {
-          "name": "Build a Website on Google Cloud",
-          "url": "https://www.skills.google/course_templates/638",
-          "credits": 13
-        },
-        {
-          "name": "Store, Process, and Manage Data on Google Cloud - Console",
-          "url": "https://www.skills.google/course_templates/658",
-          "credits": 3
-        },
-        {
-          "name": "Using the Google Cloud Speech API",
-          "url": "https://www.skills.google/course_templates/756",
-          "credits": 4
-        },
-        {
-          "name": "Explore Generative AI in Agent Platform",
-          "url": "https://www.skills.google/course_templates/959",
-          "credits": 16
-        }
-      ],
-      "credits_spent": 8,
-      "credits_needed": 52,
-      "completion_pct": 30.0,
-      "badges_remaining": 7,
-      "days_remaining": 18,
-      "pace_needed": 0.39,
-      "status": "ahead",
-      "rank": 16
+      "rank": 17
     },
     {
       "name": "Rayan Bhattacharjya",
@@ -1545,10 +1640,10 @@
       "credits_needed": 52,
       "completion_pct": 20.0,
       "badges_remaining": 8,
-      "days_remaining": 18,
-      "pace_needed": 0.44,
+      "days_remaining": 17,
+      "pace_needed": 0.47,
       "status": "ahead",
-      "rank": 17
+      "rank": 18
     },
     {
       "name": "RICK BISWAS",
@@ -1623,10 +1718,10 @@
       "credits_needed": 56,
       "completion_pct": 10.0,
       "badges_remaining": 9,
-      "days_remaining": 18,
-      "pace_needed": 0.5,
+      "days_remaining": 17,
+      "pace_needed": 0.53,
       "status": "ahead",
-      "rank": 18
+      "rank": 19
     },
     {
       "name": "Srijeeta Dey",
@@ -1701,10 +1796,10 @@
       "credits_needed": 56,
       "completion_pct": 10.0,
       "badges_remaining": 9,
-      "days_remaining": 18,
-      "pace_needed": 0.5,
+      "days_remaining": 17,
+      "pace_needed": 0.53,
       "status": "not_started",
-      "rank": 19
+      "rank": 20
     },
     {
       "name": "Abhrajit Mondal",
@@ -1776,10 +1871,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 20
+      "rank": 21
     },
     {
       "name": "Aditi Upadhyaya",
@@ -1851,10 +1946,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 21
+      "rank": 22
     },
     {
       "name": "Aditya Prajapati",
@@ -1926,10 +2021,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 22
+      "rank": 23
     },
     {
       "name": "Aiswariya Mahapatra",
@@ -2001,10 +2096,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 23
+      "rank": 24
     },
     {
       "name": "AMAN MALLICK",
@@ -2076,10 +2171,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 24
+      "rank": 25
     },
     {
       "name": "Anamika Jha",
@@ -2151,10 +2246,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
-      "rank": 25
+      "rank": 26
     },
     {
       "name": "Ananya Nayak",
@@ -2226,10 +2321,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
-      "rank": 26
+      "rank": 27
     },
     {
       "name": "Ankana Biswas",
@@ -2301,10 +2396,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 27
+      "rank": 28
     },
     {
       "name": "Ankit Dey",
@@ -2376,10 +2471,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 28
+      "rank": 29
     },
     {
       "name": "Anuska Chakraborty",
@@ -2451,10 +2546,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 29
+      "rank": 30
     },
     {
       "name": "Arkan Shafik Shaikh",
@@ -2526,10 +2621,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
-      "rank": 30
+      "rank": 31
     },
     {
       "name": "Chiradeep Kumar",
@@ -2601,10 +2696,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
-      "rank": 31
+      "rank": 32
     },
     {
       "name": "Debadrito Ghosh",
@@ -2676,10 +2771,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
-      "rank": 32
+      "rank": 33
     },
     {
       "name": "Deep Saha",
@@ -2751,10 +2846,10 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
-      "rank": 33
+      "rank": 34
     },
     {
       "name": "Dipak Kumar Agrahari",
@@ -2826,83 +2921,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
-      "status": "redeemed_only",
-      "rank": 34
-    },
-    {
-      "name": "Imtiaz sarkar",
-      "email": "Theimtiaz863@gmail.com",
-      "track": "Student",
-      "profile_url": "https://www.skills.google/public_profiles/352e2eba-e32e-445c-8337-d7faeb29f8c7",
-      "profile_status": "All Good",
-      "dev_profile_url": null,
-      "dev_profile_status": null,
-      "access_code_redeemed": true,
-      "milestone": "No Milestone",
-      "gear_badges": null,
-      "badges_count": 0,
-      "badges_names": [],
-      "completed_curriculum": [],
-      "pending_curriculum": [
-        {
-          "name": "The Basics of Google Cloud Compute",
-          "url": "https://www.skills.google/course_templates/754",
-          "credits": 4
-        },
-        {
-          "name": "Configure Service Accounts and IAM Roles for Google Cloud",
-          "url": "https://www.skills.google/course_templates/702",
-          "credits": 4
-        },
-        {
-          "name": "Implement Speech and Language Solutions with Pre-trained APIs",
-          "url": "https://www.skills.google/course_templates/700",
-          "credits": 4
-        },
-        {
-          "name": "Develop AI-Powered Prototypes in Google AI Studio",
-          "url": "https://www.skills.google/course_templates/1426",
-          "credits": 0
-        },
-        {
-          "name": "Analyze Images with the Cloud Vision API",
-          "url": "https://www.skills.google/course_templates/633",
-          "credits": 12
-        },
-        {
-          "name": "Build a Website on Google Cloud",
-          "url": "https://www.skills.google/course_templates/638",
-          "credits": 13
-        },
-        {
-          "name": "Create Your First Gemini Enterprise Application",
-          "url": "https://www.skills.google/course_templates/1586",
-          "credits": 0
-        },
-        {
-          "name": "Store, Process, and Manage Data on Google Cloud - Console",
-          "url": "https://www.skills.google/course_templates/658",
-          "credits": 3
-        },
-        {
-          "name": "Using the Google Cloud Speech API",
-          "url": "https://www.skills.google/course_templates/756",
-          "credits": 4
-        },
-        {
-          "name": "Explore Generative AI in Agent Platform",
-          "url": "https://www.skills.google/course_templates/959",
-          "credits": 16
-        }
-      ],
-      "credits_spent": 0,
-      "credits_needed": 60,
-      "completion_pct": 0.0,
-      "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 35
     },
@@ -2976,8 +2996,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 36
     },
@@ -3051,8 +3071,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 37
     },
@@ -3126,8 +3146,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 38
     },
@@ -3201,8 +3221,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 39
     },
@@ -3276,8 +3296,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 40
     },
@@ -3289,7 +3309,7 @@
       "profile_status": "All Good",
       "dev_profile_url": null,
       "dev_profile_status": null,
-      "access_code_redeemed": false,
+      "access_code_redeemed": true,
       "milestone": "No Milestone",
       "gear_badges": null,
       "badges_count": 0,
@@ -3351,9 +3371,9 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
-      "status": "not_started",
+      "days_remaining": 17,
+      "pace_needed": 0.59,
+      "status": "redeemed_only",
       "rank": 41
     },
     {
@@ -3364,7 +3384,7 @@
       "profile_status": "All Good",
       "dev_profile_url": null,
       "dev_profile_status": null,
-      "access_code_redeemed": false,
+      "access_code_redeemed": true,
       "milestone": "No Milestone",
       "gear_badges": null,
       "badges_count": 0,
@@ -3426,9 +3446,9 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
-      "status": "not_started",
+      "days_remaining": 17,
+      "pace_needed": 0.59,
+      "status": "redeemed_only",
       "rank": 42
     },
     {
@@ -3501,8 +3521,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 43
     },
@@ -3576,8 +3596,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 44
     },
@@ -3651,8 +3671,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 45
     },
@@ -3726,8 +3746,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 46
     },
@@ -3801,8 +3821,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 47
     },
@@ -3876,8 +3896,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 48
     },
@@ -3951,8 +3971,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 49
     },
@@ -4026,8 +4046,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 50
     },
@@ -4101,8 +4121,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 51
     },
@@ -4176,8 +4196,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 52
     },
@@ -4251,8 +4271,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 53
     },
@@ -4326,8 +4346,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 54
     },
@@ -4401,8 +4421,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 55
     },
@@ -4476,8 +4496,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 56
     },
@@ -4551,8 +4571,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 57
     },
@@ -4626,8 +4646,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 58
     },
@@ -4701,8 +4721,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 59
     },
@@ -4776,8 +4796,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 60
     },
@@ -4851,8 +4871,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 61
     },
@@ -4926,8 +4946,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 62
     },
@@ -5001,8 +5021,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 63
     },
@@ -5076,8 +5096,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 64
     },
@@ -5151,8 +5171,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 65
     },
@@ -5226,8 +5246,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 66
     },
@@ -5301,8 +5321,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 67
     },
@@ -5376,8 +5396,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 68
     },
@@ -5451,8 +5471,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 69
     },
@@ -5526,8 +5546,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "redeemed_only",
       "rank": 70
     },
@@ -5601,8 +5621,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 71
     },
@@ -5676,8 +5696,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 18,
-      "pace_needed": 0.56,
+      "days_remaining": 17,
+      "pace_needed": 0.59,
       "status": "not_started",
       "rank": 72
     }
