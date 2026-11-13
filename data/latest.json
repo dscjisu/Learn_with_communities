@@ -1,15 +1,15 @@
 {
   "summary": {
-    "report_date": "2026-11-12",
-    "generated_at": "2026-11-12T14:41:09.153759",
+    "report_date": "2026-11-13",
+    "generated_at": "2026-11-13T23:04:56.492152",
     "deadline": "2026-11-23",
-    "days_remaining": 11,
+    "days_remaining": 10,
     "total_participants": 72,
     "total_students": 67,
     "total_developers": 5,
     "redeemed_count": 36,
     "not_redeemed_count": 36,
-    "completed_count": 14,
+    "completed_count": 15,
     "at_risk_count": 0,
     "not_started_count": 50,
     "badge_distribution": {
@@ -18,26 +18,26 @@
       "2": 2,
       "3": 0,
       "4": 1,
-      "5": 4,
+      "5": 3,
       "6": 1,
       "7": 0,
       "8": 3,
       "9": 0,
-      "10": 14
+      "10": 15
     },
     "status_counts": {
-      "completed": 14,
-      "ahead": 8,
+      "completed": 15,
+      "ahead": 7,
       "not_started": 34,
       "redeemed_only": 16
     },
     "milestone_counts": {
-      "Milestone 3": 14,
-      "Milestone 2": 8,
+      "Milestone 3": 15,
+      "Milestone 2": 7,
       "Milestone 1": 1,
       "No Milestone": 49
     },
-    "avg_badges": 2.75
+    "avg_badges": 2.82
   },
   "curriculum": [
     {
@@ -92,6 +92,94 @@
     }
   ],
   "participants": [
+    {
+      "name": "Ankana Biswas",
+      "email": "ankana15biswas@gmail.com",
+      "track": "Student",
+      "profile_url": "https://www.skills.google/public_profiles/4480bbf7-34fd-44e0-a7e6-233b2e4072ac",
+      "profile_status": "All Good",
+      "dev_profile_url": null,
+      "dev_profile_status": null,
+      "access_code_redeemed": true,
+      "milestone": "Milestone 3",
+      "gear_badges": null,
+      "badges_count": 10,
+      "badges_names": [
+        "Analyze Images with the Cloud Vision API",
+        "Build a Website on Google Cloud",
+        "Configure Service Accounts and IAM Roles for Google Cloud",
+        "Create Your First Gemini Enterprise Application",
+        "Develop AI-Powered Prototypes in Google AI Studio",
+        "Explore Generative AI in Agent Platform",
+        "Implement Speech and Language Solutions with Pre-trained APIs",
+        "Store",
+        "Process",
+        "and Manage Data on Google Cloud - Console",
+        "The Basics of Google Cloud Compute",
+        "Using the Google Cloud Speech API"
+      ],
+      "completed_curriculum": [
+        {
+          "name": "The Basics of Google Cloud Compute",
+          "url": "https://www.skills.google/course_templates/754",
+          "credits": 4
+        },
+        {
+          "name": "Configure Service Accounts and IAM Roles for Google Cloud",
+          "url": "https://www.skills.google/course_templates/702",
+          "credits": 4
+        },
+        {
+          "name": "Implement Speech and Language Solutions with Pre-trained APIs",
+          "url": "https://www.skills.google/course_templates/700",
+          "credits": 4
+        },
+        {
+          "name": "Develop AI-Powered Prototypes in Google AI Studio",
+          "url": "https://www.skills.google/course_templates/1426",
+          "credits": 0
+        },
+        {
+          "name": "Analyze Images with the Cloud Vision API",
+          "url": "https://www.skills.google/course_templates/633",
+          "credits": 12
+        },
+        {
+          "name": "Build a Website on Google Cloud",
+          "url": "https://www.skills.google/course_templates/638",
+          "credits": 13
+        },
+        {
+          "name": "Create Your First Gemini Enterprise Application",
+          "url": "https://www.skills.google/course_templates/1586",
+          "credits": 0
+        },
+        {
+          "name": "Store, Process, and Manage Data on Google Cloud - Console",
+          "url": "https://www.skills.google/course_templates/658",
+          "credits": 3
+        },
+        {
+          "name": "Using the Google Cloud Speech API",
+          "url": "https://www.skills.google/course_templates/756",
+          "credits": 4
+        },
+        {
+          "name": "Explore Generative AI in Agent Platform",
+          "url": "https://www.skills.google/course_templates/959",
+          "credits": 16
+        }
+      ],
+      "pending_curriculum": [],
+      "credits_spent": 60,
+      "credits_needed": 0,
+      "completion_pct": 100.0,
+      "badges_remaining": 0,
+      "days_remaining": 10,
+      "pace_needed": 0,
+      "status": "completed",
+      "rank": 1
+    },
     {
       "name": "Bhumika Sudarshani",
       "email": "mamtamishra1973officiaill@gmail.com",
@@ -175,10 +263,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 1
+      "rank": 2
     },
     {
       "name": "Bikramjit Pakhira",
@@ -263,10 +351,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 2
+      "rank": 3
     },
     {
       "name": "Imtiaz sarkar",
@@ -351,10 +439,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 3
+      "rank": 4
     },
     {
       "name": "Md Adnan Tanweer",
@@ -439,10 +527,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 4
+      "rank": 5
     },
     {
       "name": "Poulami Neogi",
@@ -526,10 +614,10 @@
       "credits_needed": 20,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 5
+      "rank": 6
     },
     {
       "name": "Ratul Kole",
@@ -614,10 +702,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 6
+      "rank": 7
     },
     {
       "name": "RICK BISWAS",
@@ -702,10 +790,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 7
+      "rank": 8
     },
     {
       "name": "Rishav Roy",
@@ -789,10 +877,10 @@
       "credits_needed": 20,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 8
+      "rank": 9
     },
     {
       "name": "Sagnik Dutta",
@@ -877,10 +965,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 9
+      "rank": 10
     },
     {
       "name": "Sagnik Maitra",
@@ -965,10 +1053,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 10
+      "rank": 11
     },
     {
       "name": "Sandip Sahoo",
@@ -1053,10 +1141,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 11
+      "rank": 12
     },
     {
       "name": "Sayan Nandi",
@@ -1141,10 +1229,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 12
+      "rank": 13
     },
     {
       "name": "Sohel Sheikh",
@@ -1229,10 +1317,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 13
+      "rank": 14
     },
     {
       "name": "Sonu Kumar",
@@ -1317,10 +1405,10 @@
       "credits_needed": 0,
       "completion_pct": 100.0,
       "badges_remaining": 0,
-      "days_remaining": 11,
+      "days_remaining": 10,
       "pace_needed": 0,
       "status": "completed",
-      "rank": 14
+      "rank": 15
     },
     {
       "name": "MD FAIZ AHMED",
@@ -1402,10 +1490,10 @@
       "credits_needed": 20,
       "completion_pct": 80.0,
       "badges_remaining": 2,
-      "days_remaining": 11,
-      "pace_needed": 0.18,
+      "days_remaining": 10,
+      "pace_needed": 0.2,
       "status": "ahead",
-      "rank": 15
+      "rank": 16
     },
     {
       "name": "Ratnesh Kumar",
@@ -1489,10 +1577,10 @@
       "credits_needed": 25,
       "completion_pct": 80.0,
       "badges_remaining": 2,
-      "days_remaining": 11,
-      "pace_needed": 0.18,
+      "days_remaining": 10,
+      "pace_needed": 0.2,
       "status": "not_started",
-      "rank": 16
+      "rank": 17
     },
     {
       "name": "Rayan Bhattacharjya",
@@ -1576,10 +1664,10 @@
       "credits_needed": 20,
       "completion_pct": 80.0,
       "badges_remaining": 2,
-      "days_remaining": 11,
-      "pace_needed": 0.18,
+      "days_remaining": 10,
+      "pace_needed": 0.2,
       "status": "ahead",
-      "rank": 17
+      "rank": 18
     },
     {
       "name": "Srijeeta Dey",
@@ -1659,91 +1747,9 @@
       "credits_needed": 35,
       "completion_pct": 60.0,
       "badges_remaining": 4,
-      "days_remaining": 11,
-      "pace_needed": 0.36,
+      "days_remaining": 10,
+      "pace_needed": 0.4,
       "status": "not_started",
-      "rank": 18
-    },
-    {
-      "name": "Ankana Biswas",
-      "email": "ankana15biswas@gmail.com",
-      "track": "Student",
-      "profile_url": "https://www.skills.google/public_profiles/4480bbf7-34fd-44e0-a7e6-233b2e4072ac",
-      "profile_status": "All Good",
-      "dev_profile_url": null,
-      "dev_profile_status": null,
-      "access_code_redeemed": true,
-      "milestone": "Milestone 2",
-      "gear_badges": null,
-      "badges_count": 5,
-      "badges_names": [
-        "Analyze Images with the Cloud Vision API",
-        "Configure Service Accounts and IAM Roles for Google Cloud",
-        "Develop AI-Powered Prototypes in Google AI Studio",
-        "Implement Speech and Language Solutions with Pre-trained APIs",
-        "The Basics of Google Cloud Compute"
-      ],
-      "completed_curriculum": [
-        {
-          "name": "The Basics of Google Cloud Compute",
-          "url": "https://www.skills.google/course_templates/754",
-          "credits": 4
-        },
-        {
-          "name": "Configure Service Accounts and IAM Roles for Google Cloud",
-          "url": "https://www.skills.google/course_templates/702",
-          "credits": 4
-        },
-        {
-          "name": "Implement Speech and Language Solutions with Pre-trained APIs",
-          "url": "https://www.skills.google/course_templates/700",
-          "credits": 4
-        },
-        {
-          "name": "Develop AI-Powered Prototypes in Google AI Studio",
-          "url": "https://www.skills.google/course_templates/1426",
-          "credits": 0
-        },
-        {
-          "name": "Analyze Images with the Cloud Vision API",
-          "url": "https://www.skills.google/course_templates/633",
-          "credits": 12
-        }
-      ],
-      "pending_curriculum": [
-        {
-          "name": "Build a Website on Google Cloud",
-          "url": "https://www.skills.google/course_templates/638",
-          "credits": 13
-        },
-        {
-          "name": "Create Your First Gemini Enterprise Application",
-          "url": "https://www.skills.google/course_templates/1586",
-          "credits": 0
-        },
-        {
-          "name": "Store, Process, and Manage Data on Google Cloud - Console",
-          "url": "https://www.skills.google/course_templates/658",
-          "credits": 3
-        },
-        {
-          "name": "Using the Google Cloud Speech API",
-          "url": "https://www.skills.google/course_templates/756",
-          "credits": 4
-        },
-        {
-          "name": "Explore Generative AI in Agent Platform",
-          "url": "https://www.skills.google/course_templates/959",
-          "credits": 16
-        }
-      ],
-      "credits_spent": 24,
-      "credits_needed": 36,
-      "completion_pct": 50.0,
-      "badges_remaining": 5,
-      "days_remaining": 11,
-      "pace_needed": 0.45,
-      "status": "ahead",
       "rank": 19
     },
     {
@@ -1823,8 +1829,8 @@
       "credits_needed": 24,
       "completion_pct": 50.0,
       "badges_remaining": 5,
-      "days_remaining": 11,
-      "pace_needed": 0.45,
+      "days_remaining": 10,
+      "pace_needed": 0.5,
       "status": "ahead",
       "rank": 20
     },
@@ -1907,8 +1913,8 @@
       "credits_needed": 28,
       "completion_pct": 50.0,
       "badges_remaining": 5,
-      "days_remaining": 11,
-      "pace_needed": 0.45,
+      "days_remaining": 10,
+      "pace_needed": 0.5,
       "status": "ahead",
       "rank": 21
     },
@@ -1989,8 +1995,8 @@
       "credits_needed": 48,
       "completion_pct": 50.0,
       "badges_remaining": 5,
-      "days_remaining": 11,
-      "pace_needed": 0.45,
+      "days_remaining": 10,
+      "pace_needed": 0.5,
       "status": "not_started",
       "rank": 22
     },
@@ -2070,8 +2076,8 @@
       "credits_needed": 48,
       "completion_pct": 40.0,
       "badges_remaining": 6,
-      "days_remaining": 11,
-      "pace_needed": 0.55,
+      "days_remaining": 10,
+      "pace_needed": 0.6,
       "status": "ahead",
       "rank": 23
     },
@@ -2149,8 +2155,8 @@
       "credits_needed": 52,
       "completion_pct": 20.0,
       "badges_remaining": 8,
-      "days_remaining": 11,
-      "pace_needed": 0.73,
+      "days_remaining": 10,
+      "pace_needed": 0.8,
       "status": "ahead",
       "rank": 24
     },
@@ -2228,8 +2234,8 @@
       "credits_needed": 52,
       "completion_pct": 20.0,
       "badges_remaining": 8,
-      "days_remaining": 11,
-      "pace_needed": 0.73,
+      "days_remaining": 10,
+      "pace_needed": 0.8,
       "status": "ahead",
       "rank": 25
     },
@@ -2303,8 +2309,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 26
     },
@@ -2378,8 +2384,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 27
     },
@@ -2453,8 +2459,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 28
     },
@@ -2528,8 +2534,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 29
     },
@@ -2603,8 +2609,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 30
     },
@@ -2678,8 +2684,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 31
     },
@@ -2753,8 +2759,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 32
     },
@@ -2828,8 +2834,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 33
     },
@@ -2903,8 +2909,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 34
     },
@@ -2978,8 +2984,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 35
     },
@@ -3053,8 +3059,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 36
     },
@@ -3128,8 +3134,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 37
     },
@@ -3203,8 +3209,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 38
     },
@@ -3278,8 +3284,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 39
     },
@@ -3353,8 +3359,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 40
     },
@@ -3428,8 +3434,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 41
     },
@@ -3503,8 +3509,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 42
     },
@@ -3578,8 +3584,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 43
     },
@@ -3653,8 +3659,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 44
     },
@@ -3728,8 +3734,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 45
     },
@@ -3803,8 +3809,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 46
     },
@@ -3878,8 +3884,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 47
     },
@@ -3953,8 +3959,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 48
     },
@@ -4028,8 +4034,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 49
     },
@@ -4103,8 +4109,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 50
     },
@@ -4178,8 +4184,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 51
     },
@@ -4253,8 +4259,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 52
     },
@@ -4328,8 +4334,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 53
     },
@@ -4403,8 +4409,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 54
     },
@@ -4478,8 +4484,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 55
     },
@@ -4553,8 +4559,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 56
     },
@@ -4628,8 +4634,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 57
     },
@@ -4703,8 +4709,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 58
     },
@@ -4778,8 +4784,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 59
     },
@@ -4853,8 +4859,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 60
     },
@@ -4928,8 +4934,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 61
     },
@@ -5003,8 +5009,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 62
     },
@@ -5078,8 +5084,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 63
     },
@@ -5153,8 +5159,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 64
     },
@@ -5228,8 +5234,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 65
     },
@@ -5303,8 +5309,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 66
     },
@@ -5378,8 +5384,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 67
     },
@@ -5453,8 +5459,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 68
     },
@@ -5528,8 +5534,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 69
     },
@@ -5603,8 +5609,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "redeemed_only",
       "rank": 70
     },
@@ -5678,8 +5684,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 71
     },
@@ -5753,8 +5759,8 @@
       "credits_needed": 60,
       "completion_pct": 0.0,
       "badges_remaining": 10,
-      "days_remaining": 11,
-      "pace_needed": 0.91,
+      "days_remaining": 10,
+      "pace_needed": 1.0,
       "status": "not_started",
       "rank": 72
     }
